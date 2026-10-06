@@ -3,7 +3,7 @@ name = "mengen"
 version = "0.1.0"
 description = "KI-gestützte Mengenermittlung aus Bautagesberichten (lokal, DSGVO-konform)"
 requires-python = ">=3.11"
-dependencies = ["pydantic>=2"]
+dependencies = ["pydantic>=2", "openpyxl>=3.1"]
 
 [project.optional-dependencies]
 dev = ["pytest"]

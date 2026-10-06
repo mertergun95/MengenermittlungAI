@@ -18,6 +18,7 @@ Belgeler ──► Anlama (LLM) ──► Leistungseintrag ──► LV eşleşt
 | `gaeb.py` – GAEB X83/X84 LV okuma, X83+X84 birleştirme, Nachtrag | ✅ |
 | `extraktion.py` – kural tabanlı çıkarma: kablo, kanal, şaft, kanal temizliği + kontroller | ✅ |
 | `kabelkatalog.py` – Bayka datasheet'lerinden kablo tipi → dış çap (`data/kabelkatalog.csv`, 158 kablo) | ✅ |
+| `verlegeprotokoll.py` – Kabelverlegeprotokoll (Excel) okuma, Bautagebuch ile kablo kablo karşılaştırma | ✅ |
 | LLM ile çıkarma (tanınmayan satırlar için, Ollama, yerel) | ⏳ |
 | LV eşleştirme | ⏳ |
 | Miktar hesabı + Excel çıktısı | ⏳ |
@@ -91,6 +92,22 @@ python -m mengen.kabelkatalog kataloge/*.pdf
 
 Aynı yapının farklı tiplerde farklı çapı olabilir (ör. 200x1x0,9: A-2YOF 39 mm, AJ-2YOF 41 mm).
 Bu yüzden `durchmesser()` bir aralık döner; `bauart` parametresi ile daraltılabilir.
+
+## Verlegeprotokoll ve karşılaştırma
+
+```bash
+python -m mengen.verlegeprotokoll Verlegeprotokoll-*.xlsx Basel_BTB.pdf
+```
+
+- Protokol her kablo için resmi kaynak sayılır: tam tip ve ürün tipi (Bauart), tambur, km, Anfang/Ende, SOLL/IST, not.
+- Kablo miktarı **protokoldeki IST** değerinden alınır. Bautagebuch bunu doğrular; protokolde olmayan kablolar Bautagebuch'tan gelir ve işaretlenir.
+- Çap, protokoldeki ürün tipi (Bauart) ile katalogdan kesin olarak bulunur.
+
+Karşılaştırma kablo numarası üzerinden yapılır. Tespit edilenler:
+- Uzunluk, tambur, tip ve tarih farkları
+- Bautagebuch'ta aynı kablo parçasının iki kez yazılması
+- Kablo numarasındaki yazım hataları (aynı gün ve aynı uzunluk)
+- "Kabel umverlegt" (yeniden döşeme) ayrı bir iş olarak sayılır
 
 ## Kısaltma sözlüğü
 

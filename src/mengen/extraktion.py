@@ -81,6 +81,7 @@ class Kabel(BaseModel):
     ende_ort: str = ""
     laenge: Decimal | None = None
     teilverlegung: bool = False
+    umverlegt: bool = False
     schaechte: int | None = None
     rohrtrasse_m: Decimal | None = None
     zeilen: list[Taetigkeitszeile] = Field(default_factory=list)
@@ -141,6 +142,7 @@ def werte_aus(bericht: Tagesbericht) -> Tagesauswertung:
 
         if m := KABEL_START.match(t):
             kabel = neues_kabel(z)
+            kabel.umverlegt = "umverleg" in z.abschnitt.lower()
             kabel.bezeichnung = m.group(1).replace(" ", "")
             kabel.typ = _typ(m.group(2)) if m.group(2) else ""
             kontext = ""
@@ -321,9 +323,11 @@ def leistungen(a: Tagesauswertung) -> list[Leistungseintrag]:
             continue
         ergebnis.append(Leistungseintrag(
             datum=b.datum, ort=f"{k.anfang_ort} → {k.ende_ort}".strip(" →"),
-            taetigkeit="Kabel einziehen", material=k.typ, menge=k.laenge, einheit="m",
+            taetigkeit="Kabel umverlegen" if k.umverlegt else "Kabel einziehen",
+            material=k.typ, menge=k.laenge, einheit="m",
             merkmale={x: str(v) for x, v in {
                 "bezeichnung": k.bezeichnung, "kabeltyp": k.typ, "bauart": k.bauart, "trommel": k.trommel,
+                "anfang": k.anfang, "ende": k.ende,
                 "teilverlegung": "ja" if k.teilverlegung else "",
             }.items() if v},
             hinweise=k.notizen, quelle=quelle(k.zeilen),

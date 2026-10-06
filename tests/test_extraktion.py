@@ -161,3 +161,17 @@ def test_lagerliste_ist_keine_verlegung():
         2. 2054m (168017026)
     """))
     assert a.kabel == [] and leistungen(a) == []
+
+
+def test_umverlegt_ist_keine_neue_verlegung():
+    a = werte_aus(bericht("""
+        Kabel umverlegt:
+        Kabelbezeichnung: S3031-2-1
+        Kabeltyp: 1x4x0,8
+        Anfangsstand:1676 (AW-412-E)
+        Endstand: 1302 (LEU-ZV421)
+        Gesamtlänge: 374m
+    """))
+    e = leistungen(a)
+    assert [x.taetigkeit for x in e] == ["Kabel umverlegen"]
+    assert (e[0].merkmale["anfang"], e[0].merkmale["ende"]) == ("1676", "1302")
