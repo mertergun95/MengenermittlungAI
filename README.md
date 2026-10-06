@@ -20,8 +20,8 @@ Belgeler ──► Anlama (LLM) ──► Leistungseintrag ──► LV eşleşt
 | `kabelkatalog.py` – Bayka datasheet'lerinden kablo tipi → dış çap (`data/kabelkatalog.csv`, 158 kablo) | ✅ |
 | `verlegeprotokoll.py` – Kabelverlegeprotokoll (Excel) okuma, Bautagebuch ile kablo kablo karşılaştırma | ✅ |
 | LLM ile çıkarma (tanınmayan satırlar için, Ollama, yerel) | ⏳ |
-| LV eşleştirme | ⏳ |
-| Miktar hesabı + Excel çıktısı | ⏳ |
+| `zuordnung.py` – projeden bağımsız LV eşleştirme (LV metninden kısıtlar, metin benzerliği, birim, öğrenme, opsiyonel yerel LLM) | ✅ |
+| `aufmass.py` + `pipeline.py` – Mengenermittlung Excel'i (özet, belgeler, kontrol listesi) ve düzeltmelerden öğrenme | ✅ |
 
 ## Kurulum
 
@@ -108,6 +108,35 @@ Karşılaştırma kablo numarası üzerinden yapılır. Tespit edilenler:
 - Bautagebuch'ta aynı kablo parçasının iki kez yazılması
 - Kablo numarasındaki yazım hataları (aynı gün ve aynı uzunluk)
 - "Kabel umverlegt" (yeniden döşeme) ayrı bir iş olarak sayılır
+
+## Uçtan uca: Mengenermittlung
+
+```bash
+python -m mengen.pipeline \
+  --lv Basel_LV.x83 Basel_LV.x84 Basel_Nachtrag_LV.x83 Basel_Nachtrag_LV.x84 \
+  --btb Basel_BTB.pdf --protokoll Verlegeprotokoll-*.xlsx \
+  --gedaechtnis projekte/923512.json --out Mengenermittlung.xlsx [--llm qwen2.5:14b]
+```
+
+Excel'de üç sayfa var:
+- **Mengenermittlung:** Her OZ için bulunan miktar, LV miktarı, LV'ye oranı (%110'u aşan satırlar kırmızı), EP, tutar ve kontrol edilecek belge sayısı.
+- **Belege:** Her iş tek satırda: kaynak (doküman, sayfa, orijinal metin), önerilen OZ, güven skoru, gerekçe ve alternatifler.
+- **Prüfliste:** Pozisyonu olmayan, güveni düşük ya da uyarı taşıyan belgeler.
+
+**Eşleştirme projeye özel kural içermez:**
+1. LV metninden kısıtlar otomatik okunur ("D bis 25 mm", "über 25-40 mm", "Größe II", "IV-V") ve işin özellikleriyle karşılaştırılır. Aralık dışı kalan aday elenir; kısmen uyan ya da doğrulanamayan kısıt güveni düşürür.
+2. Birim uyumu kontrol edilir.
+3. Metin benzerliği hesaplanır: önce kısaltmalar (`glossar.csv`) ve eş anlamlılar (`synonyme.csv`) normalize edilir, sonra karakter 3-gram TF-IDF ile karşılaştırılır.
+4. Güven skoru 0,3'ün altındaysa öneri yapılmaz, sadece alternatifler gösterilir. Sistem tahmin yürütmez.
+5. **Opsiyonel olarak yerel LLM** (Ollama) devreye girer, ama sadece güveni düşük durumlarda ve sadece aday listesinden seçebilir.
+
+**Düzeltmelerden öğrenme:** Kontrol eden kişi Belege sayfasındaki "OZ korrigiert" sütununa doğru OZ'yi ya da önerinin doğru olduğunu belirtmek için `ok` yazar. Sonra şu komut çalıştırılır:
+
+```bash
+python -m mengen.pipeline --lernen Mengenermittlung.xlsx --gedaechtnis projekte/923512.json
+```
+
+Bundan sonra aynı türdeki işler (aynı iş türü, özellikler ve birim) doğrudan öğrenilmiş pozisyona gider.
 
 ## Kısaltma sözlüğü
 

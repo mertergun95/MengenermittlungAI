@@ -1,0 +1,8 @@
+# Fachbegriffe mit gleicher Bedeutung, je Zeile eine Gruppe; der erste Begriff ist die Normalform.
+# Gilt projektübergreifend; firmenspezifische Abkürzungen gehören in glossar.csv.
+kabelkanal;kabeltrog;kabeltroeg;betonkabelkanal;bkk;u-kanal;kk;kabelrinne
+kabelschacht;schacht;kabeschacht;kabelkleinschacht
+einziehen;verlegen;eingezogen;verlegt
+herausziehen;ausbauen;rueckbau;rückbau;ausgebaut;herausgezogen
+oeffnen;öffnen;aufdeckeln;geöffnet
+schliessen;schließen;zudeckeln;geschlossen
