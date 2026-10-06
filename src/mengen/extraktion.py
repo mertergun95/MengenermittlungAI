@@ -25,7 +25,7 @@ _I = re.IGNORECASE
 _TYP = r"(\d+\s*[x×]\s*\d+\s*[x×]\s*\d+(?:[.,]\d+)?[A-Za-z]*)"
 KABEL_START = re.compile(r"^(?:Kabelbezeichnung|Kabel)\s*:?\s*(S\s?\d[\w-]*|\d+(?:-\d+)+)\s*(?:/\s*" + _TYP + r"\.?)?\s*$", _I)
 KABEL_START_LWL = re.compile(r"^Kabel\s+((?:DB\s+\w+\s+)?LWL.*?)\.?$", _I)
-KABELTYP = re.compile(r"^Kabeltyp\s*:?\s*(?:[A-Z]+\s*-\s*)?" + _TYP, _I)
+KABELTYP = re.compile(r"^Kabeltyp\s*:?\s*(?:([A-Z]+)\s*-\s*)?" + _TYP, _I)
 TROMMEL = re.compile(r"^Trommel(?:nummer)?\s*[:/]\s*([A-Z]*\d+\w*)\s*(?:\((.*?)\))?", _I)
 ANFANG = re.compile(r"^(?:Kabelanfang|Anfangs?stand|Anfang)\s*[:/]\s*(\d+)(?:\s*m\b)?\s*(.*)$", _I)
 ENDE = re.compile(r"^(?:Kabelende|Endstand(?:\s*/\s*Teilverlegung[^:]*)?|Ende)\s*[:/]\s*(\d+)(?:\s*m\b)?\s*(.*)$", _I)
@@ -73,6 +73,7 @@ def _typ(text: str) -> str:
 class Kabel(BaseModel):
     bezeichnung: str = ""
     typ: str = ""
+    bauart: str = ""
     trommel: str = ""
     anfang: int | None = None
     anfang_ort: str = ""
@@ -152,7 +153,8 @@ def werte_aus(bericht: Tagesbericht) -> Tagesauswertung:
                 kabel = neues_kabel(z)
             else:
                 kabel.zeilen.append(z)
-            kabel.typ = _typ(m.group(1))
+            kabel.typ = _typ(m.group(2))
+            kabel.bauart = (m.group(1) or "").upper()
         elif m := TROMMEL.match(t):
             if kabel is None or kabel.trommel:
                 kabel = neues_kabel(z)
@@ -321,7 +323,7 @@ def leistungen(a: Tagesauswertung) -> list[Leistungseintrag]:
             datum=b.datum, ort=f"{k.anfang_ort} → {k.ende_ort}".strip(" →"),
             taetigkeit="Kabel einziehen", material=k.typ, menge=k.laenge, einheit="m",
             merkmale={x: str(v) for x, v in {
-                "bezeichnung": k.bezeichnung, "kabeltyp": k.typ, "trommel": k.trommel,
+                "bezeichnung": k.bezeichnung, "kabeltyp": k.typ, "bauart": k.bauart, "trommel": k.trommel,
                 "teilverlegung": "ja" if k.teilverlegung else "",
             }.items() if v},
             hinweise=k.notizen, quelle=quelle(k.zeilen),

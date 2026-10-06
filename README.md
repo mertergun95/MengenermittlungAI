@@ -17,6 +17,7 @@ Belgeler ──► Anlama (LLM) ──► Leistungseintrag ──► LV eşleşt
 | `bautagebuch.py` – bau-mobil Bautagebuch PDF → günlük raporlar (sayfa/blok referanslı) | ✅ |
 | `gaeb.py` – GAEB X83/X84 LV okuma, X83+X84 birleştirme, Nachtrag | ✅ |
 | `extraktion.py` – kural tabanlı çıkarma: kablo, kanal, şaft, kanal temizliği + kontroller | ✅ |
+| `kabelkatalog.py` – Bayka datasheet'lerinden kablo tipi → dış çap (`data/kabelkatalog.csv`, 158 kablo) | ✅ |
 | LLM ile çıkarma (tanınmayan satırlar için, Ollama, yerel) | ⏳ |
 | LV eşleştirme | ⏳ |
 | Miktar hesabı + Excel çıktısı | ⏳ |
@@ -78,6 +79,18 @@ Kontroller:
 - Uzunluk ile km aralığı farkı
 - Günlük toplam ile kabloların toplamı arasındaki fark
 - Açılan ve kapatılan kanal bakiyesi
+
+## Kablo kataloğu
+
+LV kabloları dış çapa göre faturalandırıyor ("D bis 25 mm" / "D über 25-40 mm"), raporlarda ise sadece yapı yazıyor ("160x1x0,9").
+`data/kabelkatalog.csv` üretici datasheet'lerinden üretilir:
+
+```bash
+python -m mengen.kabelkatalog kataloge/*.pdf
+```
+
+Aynı yapının farklı tiplerde farklı çapı olabilir (ör. 200x1x0,9: A-2YOF 39 mm, AJ-2YOF 41 mm).
+Bu yüzden `durchmesser()` bir aralık döner; `bauart` parametresi ile daraltılabilir.
 
 ## Kısaltma sözlüğü
 
