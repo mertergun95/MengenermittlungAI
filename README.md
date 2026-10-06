@@ -15,7 +15,7 @@ Belgeler ──► Anlama (LLM) ──► Leistungseintrag ──► LV eşleşt
 | `schema.py` – ortak veri modeli (Leistungseintrag, LVPosition, Mengenzeile) | ✅ |
 | `normalisierung.py` – kısaltma sözlüğü, birim, km (`12+345`) | ✅ |
 | Belge okuma (PDF/Word/Excel) | ⏳ |
-| GAEB X83/X84 LV okuma | ⏳ |
+| `gaeb.py` – GAEB X83/X84 LV okuma, X83+X84 birleştirme, Nachtrag | ✅ |
 | LLM ile çıkarma (Ollama, yerel) | ⏳ |
 | LV eşleştirme | ⏳ |
 | Miktar hesabı + Excel çıktısı | ⏳ |
@@ -26,6 +26,21 @@ Belgeler ──► Anlama (LLM) ──► Leistungseintrag ──► LV eşleşt
 pip install -e ".[dev]"
 pytest
 ```
+
+## LV okuma
+
+```bash
+python -m mengen.gaeb Basel_LV.x83 Basel_LV.x84
+```
+
+```python
+from mengen.gaeb import lese_lv, verbinde, vereinige
+haupt = verbinde(lese_lv("Basel_LV.x83"), lese_lv("Basel_LV.x84"))       # metin + fiyat
+nt1 = verbinde(lese_lv("Basel_Nachtrag_LV.x83"), lese_lv("Basel_Nachtrag_LV.x84"))
+positionen = vereinige(haupt, nt1)                                       # eşleştirme için tek liste
+```
+
+X84 sadece OZ ve fiyat içerir. Metin, birim ve LV miktarı X83'ten gelir. Sadece X84 varsa miktar `GP / EP` ile türetilir.
 
 ## Kısaltma sözlüğü
 

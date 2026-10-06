@@ -34,13 +34,29 @@ class Leistungseintrag(BaseModel):
 
 
 class LVPosition(BaseModel):
-    """Position aus dem Leistungsverzeichnis (GAEB X83/X84)."""
+    """Position aus dem Leistungsverzeichnis (Texte aus X83, Preise aus X84)."""
 
     oz: str
-    kurztext: str
+    kurztext: str = ""
     langtext: str = ""
-    einheit: str
+    abschnitt: str = Field("", description="Titelpfad, z. B. 'Kabelverlegung > Stammkabel'")
+    einheit: str | None = None
     menge_lv: Decimal | None = None
+    ep: Decimal | None = Field(None, description="Einheitspreis")
+    gp: Decimal | None = Field(None, description="Gesamtpreis")
+    lv: str = Field("", description="Kennung des LV, z. B. Projektnummer oder Nachtrag")
+
+
+class LV(BaseModel):
+    """Ein eingelesenes Leistungsverzeichnis."""
+
+    projekt: str
+    bezeichnung: str = ""
+    datenart: str = Field(description="GAEB-Datenaustauschphase, z. B. '83' oder '84'")
+    positionen: list[LVPosition]
+
+    def position(self, oz: str) -> LVPosition | None:
+        return next((p for p in self.positionen if p.oz == oz), None)
 
 
 class Mengenzeile(BaseModel):
