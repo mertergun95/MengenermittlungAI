@@ -30,6 +30,10 @@ class Leistungseintrag(BaseModel):
     material: str | None = None
     menge: Decimal | None = None
     einheit: str | None = None
+    merkmale: dict[str, str] = Field(
+        default_factory=dict, description="Für die LV-Zuordnung, z. B. kabeltyp, groesse, lage"
+    )
+    hinweise: list[str] = Field(default_factory=list, description="Plausibilitätswarnungen")
     quelle: Quelle
 
 

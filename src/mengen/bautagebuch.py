@@ -25,6 +25,7 @@ _SEITE = re.compile(r"Seite (\d+) von (\d+)")
 _PROJEKT = re.compile(r"Projekt/Baustelle:\s*(.+?)\s*\((\d+)\)\s*$", re.M)
 _GESAMT = re.compile(r"^\s*Gesamt\s+(\d+)\s+([\d.,]+)\s*Std", re.M)
 _MASCHINE = re.compile(r"\d,\d\dStd\s{2,}([^\d\s].*?)\s*$")
+AUFZAEHLUNG = "-–⁃•· "
 _TAET_START = "ausgeführte Tätigkeiten / Sonstiges"
 _TAET_ENDE = re.compile(r"Dieses Bautagebuch wurde|^SH\d{2}-\d{4}-\d{3}\s*$|bau-mobil - das mobile", re.M)
 
@@ -114,19 +115,19 @@ def _taetigkeiten(seiten: list[tuple[int, str]]) -> list[Taetigkeitszeile]:
     for i, (nr, seite) in enumerate(seiten):
         for roh in _taetigkeits_text(seite, i == 0).splitlines():
             text = re.sub(r"\s{2,}", " ", roh).strip()
-            if not text:
+            if not text.strip(AUFZAEHLUNG):
                 leer = bool(zeilen)
                 continue
             vorher = zeilen[-1] if zeilen else None
             # Umbrochene Zeile: setzt einen '-'-Punkt fort, der nicht mit Satzzeichen endet
-            if vorher and not text.startswith("-") and vorher.text.startswith("-") \
+            if vorher and text[0] not in AUFZAEHLUNG and vorher.text[0] in AUFZAEHLUNG \
                     and not re.search(r"[.:!)]$", vorher.text) and not leer:
                 vorher.text += " " + text
                 continue
             if leer:
                 block += 1
                 leer = False
-            inhalt = text.lstrip("- ").strip()
+            inhalt = text.lstrip(AUFZAEHLUNG).strip()
             if inhalt.endswith(":"):
                 abschnitt = inhalt.rstrip(" :")
                 block += 1

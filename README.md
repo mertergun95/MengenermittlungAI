@@ -16,7 +16,8 @@ Belgeler ──► Anlama (LLM) ──► Leistungseintrag ──► LV eşleşt
 | `normalisierung.py` – kısaltma sözlüğü, birim, km (`12+345`) | ✅ |
 | `bautagebuch.py` – bau-mobil Bautagebuch PDF → günlük raporlar (sayfa/blok referanslı) | ✅ |
 | `gaeb.py` – GAEB X83/X84 LV okuma, X83+X84 birleştirme, Nachtrag | ✅ |
-| LLM ile çıkarma (Ollama, yerel) | ⏳ |
+| `extraktion.py` – kural tabanlı çıkarma: kablo, kanal, şaft, kanal temizliği + kontroller | ✅ |
+| LLM ile çıkarma (tanınmayan satırlar için, Ollama, yerel) | ⏳ |
 | LV eşleştirme | ⏳ |
 | Miktar hesabı + Excel çıktısı | ⏳ |
 
@@ -53,6 +54,30 @@ python -m mengen.bautagebuch Riehen_BTB.pdf
 Her `Tagesbericht`: tarih, proje no, hava, personel/saat, makineler ve `taetigkeiten` satırları.
 Her satır sayfa numarasını, son başlığı (`abschnitt`, ör. "Kabelkanal öffnen (Km 4,266 - 3,085)") ve
 boş satırlarla ayrılmış grubu (`block`, ör. bir kablo) taşır. Çok sayfalı raporlar tek güne birleştirilir.
+
+## Kural tabanlı çıkarma
+
+```bash
+python -m mengen.extraktion Basel_BTB.pdf
+```
+
+Çıktı: tanınma oranı, iş türü ve özelliğe göre toplamlar, tutarlılık uyarıları ve tanınmayan satırların en sık kalıpları.
+
+Tanınan kalıplar:
+- **Kablo blokları**, iki yazım şekli: `Kabel S… / Kabelanfang / Kabelende / Summe` ve `Kabelbezeichnung / Kabeltyp / Anfangsstand / Endstand / Gesamtlänge`
+- **Kanal:** BKK, GFK, KK ve U-Kanal; `1er…5er` boyutu, iç/üst konum (innenliegend/aufliegend), km aralığı
+- **Şaft açma/kapama:** boyut ve adet
+- **Kanal temizliği**
+
+Faturalama kuralları:
+- Kanal "schließen" (kapama) ayrıca sayılmaz.
+- Günlük özet (gesamt/INSGESAMT) varsa ayrıntılı satırlar iki kez sayılmaz.
+
+Kontroller:
+- Uzunluk ile |Endstand − Anfangsstand| farkı
+- Uzunluk ile km aralığı farkı
+- Günlük toplam ile kabloların toplamı arasındaki fark
+- Açılan ve kapatılan kanal bakiyesi
 
 ## Kısaltma sözlüğü
 
