@@ -1,0 +1,23 @@
+[project]
+name = "mengen"
+version = "0.1.0"
+description = "KI-gestützte Mengenermittlung aus Bautagesberichten (lokal, DSGVO-konform)"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2"]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+mengen = ["py.typed"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
