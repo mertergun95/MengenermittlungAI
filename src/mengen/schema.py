@@ -69,3 +69,31 @@ class Mengenzeile(BaseModel):
     eintraege: list[Leistungseintrag]
     konfidenz: float = Field(ge=0, le=1)
     freigegeben: bool = False
+
+
+class Taetigkeitszeile(BaseModel):
+    """Eine Zeile aus 'ausgeführte Tätigkeiten', noch unverstanden."""
+
+    text: str
+    seite: int = Field(description="Seite im PDF, 1-basiert")
+    abschnitt: str = Field("", description="Letzte Überschrift, z. B. 'Kabelverlegung'")
+    block: int = Field(0, description="Durch Leerzeilen getrennte Gruppe, z. B. ein Kabel")
+
+
+class Tagesbericht(BaseModel):
+    """Ein Bautagebuch-Eintrag (ein Tag), wie er aus dem PDF kommt."""
+
+    datum: date
+    projekt: str = ""
+    projekt_nr: str = ""
+    wetter: str = ""
+    personal_anzahl: int | None = None
+    stunden_gesamt: Decimal | None = None
+    maschinen: list[str] = []
+    taetigkeiten: list[Taetigkeitszeile] = []
+    dokument: str
+    seiten: list[int]
+
+    @property
+    def text(self) -> str:
+        return "\n".join(z.text for z in self.taetigkeiten)

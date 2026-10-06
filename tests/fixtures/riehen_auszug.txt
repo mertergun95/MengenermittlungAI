@@ -1,0 +1,412 @@
+                   Muster Bau GmbH
+
+                   Musterstr. 1
+                   12345 Musterstadt
+                                                                                    Bautagebuch
+                                                                                    Montag, 25. August 2025 / 35 KW
+                                                                                               Mitarbeiter, A
+                                                                                                 Mitarbeiter, B
+                                                                                              Erfasser, E
+
+                  Projekt/Baustelle: DB Riehen (CH), KV; LST (924761)
+                  Straße                            :                                                                         Plz/Ort            : 4125 Riehen
+                  Projekt-/Baustellenart            : Kabelarbeiten                                                           Bauleiter          : Bauleiter, X
+                  Auftraggeber                      : Keine Zuordnung                                                         Bestell-Nr.        :
+                                                                                                                              Auftrags-Nr.       :
+                                                        00001 Diverse                                                         Ext.-ID            :
+
+                  Wetter / Temperatur                                                                                         Fahrzeuge
+                  sonnig \ min. 12°C - max. 27°C                                                                              FZ-01 Fiat Ducato
+                                                                                                                              FZ-01 Fiat Ducato
+                                                                                                                              FZ-01 Mitsubishi Pick-Up
+
+                  Personaleinsatz                                                                                             Maschineneinsatz
+
+                  Mitarbeiterart           Anzahl       Beginn           Ende       Pause        Stunden      Gesamt          Maschine
+                  Gleisbau Gurtweil          7          7.00 Uhr        18.00 Uhr   1,00Std      10,00Std        70,00Std     ZW23 - Liebherr Bagger A922
+                  Gesamt                     7                                                                   70,00Std
+
+
+
+                  ausgeführte Tätigkeiten / Sonstiges
+                  - Kabelverlegung :
+
+                  - Kabel S1155 / 10×4×1,4.
+                  - Kabelanfang / 171 (KV 1155).
+                  - Kabelende / 893 (KS 1150).
+                  - Summe / 722,00m.
+                  - Trommelnummer / 168022003.
+                  - Kabelkennstreifen (weiß) 40Stck bedruckt und angelegt.
+
+
+                  - Kabelkanal öffnen (Km 4,266 - 3,085) / (Km 2,854 - 1,750) :
+
+                  - BKK (1er) aufliegend 1973,00m.
+                  - BKK (1er) innenliegend 119,00m.
+
+
+                  - Freischnitt :
+
+                  - Höhe 0,45m / Breite 1,00m / 364,00m. (Km 3,085).
+
+
+                  - Kabeltrommel (2× LKW) abgeladen.
+                  Einweisung
+
+
+                  Dieses Bautagebuch wurde elektronisch erstellt und ist daher auch                                                     geprüft und anerkannt
+                  ohne Unterschrift gültig!
+                                                                                                                                                                 am
+                  Digital erfasst durch Erfasser, E am Montag, 25. August 2025.                                Bauleiter / Bauherr
+SH01-0001-004
+
+
+
+
+                bau-mobil - das mobile Bautagebuch                                               Seite 1 von 1                                             06.10.2026/08:36:43 Uhr
+                   Muster Bau GmbH
+
+                   Musterstr. 1
+                   12345 Musterstadt
+                                                                                     Bautagebuch
+                                                                                    Mittwoch, 27. August 2025 / 35 KW
+                                                                                                Mitarbeiter, A
+                                                                                                  Mitarbeiter, B
+                                                                                               Erfasser, E
+
+                  Projekt/Baustelle: DB Riehen (CH), KV; LST (924761)
+                  Straße                            :                                                                        Plz/Ort         : 4125 Riehen
+                  Projekt-/Baustellenart            : Kabelarbeiten                                                          Bauleiter       : Bauleiter, X
+                  Auftraggeber                      : Keine Zuordnung                                                        Bestell-Nr.     :
+                                                                                                                             Auftrags-Nr.    :
+                                                        00001 Diverse                                                        Ext.-ID         :
+
+                  Wetter / Temperatur                                                                                        Fahrzeuge
+                  regnerisch \ min. 10°C - max. 28°C                                                                         FZ-01 Fiat Ducato
+                                                                                                                             FZ-01 Fiat Ducato
+                                                                                                                             FZ-01 Mitsubishi Pick-Up
+
+                  Personaleinsatz                                                                                            Maschineneinsatz
+
+                  Mitarbeiterart           Anzahl       Beginn           Ende        Pause        Stunden      Gesamt        Maschine
+                  Gleisbau Gurtweil          8          7.00 Uhr        18.00 Uhr    1,00Std      10,00Std        80,00Std   ZW23 - Liebherr Bagger A922
+                  Gesamt                     8                                                                    80,00Std   ZW20/1 - Liebherr A922
+
+
+
+                  ausgeführte Tätigkeiten / Sonstiges
+                  - Kabelverlegung :
+
+                  - Kabel S1140 / 50×1×1,4.
+                  - Kabelanfang / 0015 (Muffe Km 2,108).
+                  - Kabelende / 0459 (Muffe Km 1,686).
+                  - Summe / 444,00m.
+                  - Trommelnummer / 220228851.
+                  - Kabel durch 6,00m Rohrtrasse verlegt.
+                  - Kabel durch 2× Schacht verlegt.
+                  - Schacht (groß) 2× öffnen und schließen.
+                  - Kabelkennstreifen (weiß) 25 Stck bedruckt und angelegt.
+
+                  - Kabel S1140 / 50×1×1,4.
+                  - Kabelanfang / 0511 (Muffe Km 1,171).
+                  - Kabelende / 1040 (Muffe Km 1,686).
+                  - Summe / 529,00m.
+                  - Trommelnummer / 220228851.
+                  - Kabel durch 12,00m Rohrtrasse verlegt.
+                  - Kabel durch 4× Schacht verlegt.
+                  - Schacht (groß) 4× öffnen und schließen.
+                  - Kabelkennstreifen (weiß) 25 Stck bedruckt und angelegt.
+
+                  - Kabel S1115 / 80×1×1,4.
+                  - Kabelanfang / 1002 (Muffe Km 0,736).
+                  - Kabelende / 0008 (KS 1115).
+                  - Summe / 994,00m.
+                  - Trommelnummer / 220229412.
+                  - Kabel durch 12,00m Rohrtrasse verlegt.
+                  - Kabel durch 4× Schacht verlegt.
+                  - Kabelkennstreifen (weiß) 50 Stck bedruckt und angelegt.
+
+                  - Kabel S1135 / 50×1×1,4.
+                  - Kabelanfang / 1368 (KS 1135).
+                  - Kabelende / 1907 (KS 1125).
+                  - Summe / 539,00m.
+                  - Trommelnummer / 168021359.
+                  - Kabel durch 34,00m Rohrtrasse verlegt.
+                  - Kabel durch 7× Schacht verlegt.
+                  - Schacht (groß) 7× öffnen und schließen.
+                  - Kabelkennstreifen (weiß) 40 Stck bedruckt und angelegt.
+
+                  - In die Firma gefahren um Anhänger abzuholen.
+                  Dokumentation siehe A Mitarbeiter
+SH01-0001-004
+
+
+
+
+                bau-mobil - das mobile Bautagebuch                                                Seite 1 von 2                                        06.10.2026/08:36:43 Uhr
+                   Muster Bau GmbH
+
+                   Musterstr. 1
+                   12345 Musterstadt
+                                                                        Bautagebuch
+                                                                       Mittwoch, 27. August 2025 / 35 KW
+
+
+                  Dieses Bautagebuch wurde elektronisch erstellt und ist daher auch                                    geprüft und anerkannt
+                  ohne Unterschrift gültig!
+                                                                                                                                               am
+                  Digital erfasst durch Erfasser, E am Mittwoch, 27. August 2025.               Bauleiter / Bauherr
+SH01-0001-004
+
+
+
+
+                bau-mobil - das mobile Bautagebuch                                    Seite 2 von 2                                      06.10.2026/08:36:43 Uhr
+                   Muster Bau GmbH
+
+                   Musterstr. 1
+                   12345 Musterstadt
+                                                                                    Bautagebuch
+                                                                                Donnerstag, 11. September 2025 / 37 KW
+                                                                                              Mitarbeiter, A
+
+                  Projekt/Baustelle: DB Riehen (CH), KV; LST (924761)
+                  Straße                            :                                                                       Plz/Ort            : 4125 Riehen
+                  Projekt-/Baustellenart            : Kabelarbeiten                                                         Bauleiter          : Bauleiter, X
+                  Auftraggeber                      : Keine Zuordnung                                                       Bestell-Nr.        :
+                                                                                                                            Auftrags-Nr.       :
+                                                        00001 Diverse                                                       Ext.-ID            :
+
+                  Wetter / Temperatur                                                                                       Fahrzeuge
+                  bewölkt \ min. 13°C - max. 20°C                                                                           FZ-01 Fiat Ducato
+                                                                                                                            FZ-01 Fiat Ducato
+
+                  Personaleinsatz                                                                                           Maschineneinsatz
+
+                  Mitarbeiterart           Anzahl       Beginn           Ende       Pause      Stunden     Gesamt
+                  Gleisbau Gurtweil          5          7.00 Uhr        16.00 Uhr   1,00Std     8,00Std        40,00Std
+                  Gleisbau Gurtweil          3          7.00 Uhr        18.00 Uhr   1,00Std    10,00Std        30,00Std
+                  Gesamt                     8                                                                 70,00Std
+
+
+
+                  ausgeführte Tätigkeiten / Sonstiges
+
+
+
+
+                  Dieses Bautagebuch wurde elektronisch erstellt und ist daher auch                                                   geprüft und anerkannt
+                  ohne Unterschrift gültig!
+                                                                                                                                                               am
+                  Digital erfasst durch Mitarbeiter, A am Donnerstag, 11. September 2025                           Bauleiter / Bauherr
+SH01-0001-004
+
+
+
+
+                bau-mobil - das mobile Bautagebuch                                             Seite 1 von 1                                             06.10.2026/08:36:43 Uhr
+                   Muster Bau GmbH
+
+                   Musterstr. 1
+                   12345 Musterstadt
+                                                                                     Bautagebuch
+                                                                                   Montag, 24. November 2025 / 48 KW
+                                                                                               Mitarbeiter, A
+
+                  Projekt/Baustelle: DB Riehen (CH), KV; LST (924761)
+                  Straße                            :                                                                      Plz/Ort         : 4125 Riehen
+                  Projekt-/Baustellenart            : Kabelarbeiten                                                        Bauleiter       : Bauleiter, X
+                  Auftraggeber                      : Keine Zuordnung                                                      Bestell-Nr.     :
+                                                                                                                           Auftrags-Nr.    :
+                                                        00001 Diverse                                                      Ext.-ID         :
+
+                  Wetter / Temperatur                                                                                      Fahrzeuge
+                  regnerisch \ min. 2°C - max. 4°C                                                                         FZ-01 Fiat Ducato
+                                                                                                                           FZ-01 Fiat Ducato
+
+                  Personaleinsatz                                                                                          Maschineneinsatz
+
+                  Mitarbeiterart           Anzahl        Beginn         Ende         Pause      Stunden     Gesamt
+                  Gleisbau Gurtweil          7          22.00 Uhr       0.00 Uhr     0,00Std     2,00Std        14,00Std
+                  Gesamt                     7                                                                  14,00Std
+
+
+
+                  ausgeführte Tätigkeiten / Sonstiges
+                  - Kabelverlegung :
+
+                  - Kabel S1640-3 / 1×4×1,4.
+                  - Kabelanfang / 12474 (W804/G501).
+                  - Kabelende / 12589 (KS 1150).
+                  - Summe / 115,00m.
+                  - Trommelnummer / 108932492.
+                  - Kabel durch 5× Schacht verlegt.
+                  - Schacht (groß) 5× öffnen und schließen.
+                  - Kabel durch 30,00m Rohrtrasse verlegt.
+                  - 20 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1640-2 / 1×4×1,4.
+                  - Kabelanfang / 12616 (G401/W804).
+                  - Kabelende / 12651 (KS 1140).
+                  - Summe / 35,00m.
+                  - Trommelnummer / 108932492.
+                  - Kabel durch 2× Schacht verlegt.
+                  - Schacht (groß) 1× öffnen und schließen.
+                  - Kabel durch 6,00m Rohrtrasse verlegt.
+                  - 10 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1640-1 / 1×4×1,4.
+                  - Kabelanfang / 12590 (KS 1140).
+                  - Kabelende / 12615 (G202/W804).
+                  - Summe / 25,00m.
+                  - Trommelnummer / 108932492.
+                  - Kabel durch 1× Schacht verlegt.
+                  - 10 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1645-1 / 1×4×1,4.
+                  - Kabelanfang / 12652 (KV 1645).
+                  - Kabelende / 12687 (G501/G601).
+                  - Summe / 35,00m.
+                  - Trommelnummer / 108932492.
+                  - 10 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1650-1 / 1×4×1,4.
+                  - Kabelanfang / 12688 (KS 1150).
+                  - Kabelende / 12713 (G601A).
+                  - Summe / 25,00m.
+                  - Trommelnummer / 108932492.
+                  - 10 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1635-1 / 1×4×1,4.
+                  - Kabelanfang / 12714 (G102/G202).
+                  - Kabelende / 12739 (KS 1135).
+                  - Summe / 25,00m.
+                  - Trommelnummer / 108932492.
+                  - Kabel durch 1× Schacht verlegt.
+                  - Schacht (groß) 1× öffnen und schließen.
+SH01-0001-004
+
+
+
+
+                bau-mobil - das mobile Bautagebuch                                              Seite 1 von 3                                        06.10.2026/08:36:43 Uhr
+                   Muster Bau GmbH
+
+                   Musterstr. 1
+                   12345 Musterstadt
+                                                                           Bautagebuch
+                                                                         Montag, 24. November 2025 / 48 KW
+                  - 10 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1635-2 / 1×4×1,4.
+                  - Kabelanfang / 12740 (G201/W801).
+                  - Kabelende / 12882 (KS 1135).
+                  - Summe / 142,00m.
+                  - Trommelnummer/ 108932492.
+                  - Kabel durch 2× Schacht verlegt.
+                  - Schacht (groß) 1× öffnen und schließen.
+                  - Kabel durch 6,00m Rohrtrasse verlegt.
+                  - 20 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1635-3 / 1×4×1,4.
+                  - Kabelanfang / 12883 (KS 1135).
+                  - Kabelende / 12918 (G301/G401).
+                  - Summe / 35,00m.
+                  - Trommelnummer / 108932492.
+                  - Kabel durch 2× Schacht verlegt.
+                  - Schacht (groß) 1× öffnen und schließen.
+                  - Kabel durch 6,00m Rohrtrasse verlegt.
+                  - 8 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1635-4 / 1×4×1,4.
+                  - Kabelanfang / 12919 (W801/G102).
+                  - Kabelende / 12976 (KS 1135).
+                  - Summe / 57,00m.
+                  - Trommelnummer / 108932492.
+                  - Kabel durch 2× Schacht verlegt.
+                  - Kabel durch 6,00m Rohrtrasse verlegt.
+                  - 10 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1635-5 / 1×4×1,4.
+                  - Kabelanfang / 12977 (W801/G301).
+                  - Kabelende / 13038 (KS 1135).
+                  - Summe / 61,00m.
+                  - Trommelnummer / 108932492.
+                  - Kabel durch 1× Schacht verlegt.
+                  - Kabel durch 6,00m Rohrtrasse verlegt.
+                  - 10 Kabelkennstreifen (weiß) bedruckt und angelegt
+
+                  - Kabel S1625-2 / 1×4×1,4.
+                  - Kabelanfang / 5764 (G101/B355/G201).
+                  - Kabelende / 6086 (KS 1125).
+                  - Summe / 322,00m.
+                  - Trommelnummer / 098082629.
+                  - Kabel durch 3× Schacht verlegt.
+                  - Schacht (groß) 3× öffnen und schließen.
+                  - Kabel durch 24,00m Rohrtrasse verlegt.
+                  - 25 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1625-1 / 1×4×1,4.
+                  - Kabelanfang / 13039 (KS 1125).
+                  - Kabelende / 13074 (G101A).
+                  - Summe / 35,00m.
+                  - Trommelnummer / 108932492.
+                  - Kabel durch 2× Schacht verlegt.
+                  - Schacht (klein) 1× öffnen und schließen.
+                  - Kabel durch 6,00m Rohrtrasse verlegt.
+                  - 10 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1613-2 / 1×4×1,4.
+                  - Kabelanfang / 6087 (ANR1a.003,2).
+                  - Kabelende / 6286 (KS 1613).
+                  - Summe / 199,00m.
+                  - Trommelnummer / 098082629.
+                  - Kabel durch 1× Schacht verlegt.
+                  - Schacht (groß) 1× öffnen und schließen.
+                  - 25 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabel S1613-1 / 1×4×1,4.
+                  - Kabelanfang / 6287 (ANR1aII.002,5).
+                  - Kabelende / 6334 (KS 1613).
+                  - Summe / 47,00m.
+                  - Trommelnummer / 098082629.
+                  - Kabel durch 1× Schacht verlegt.
+SH01-0001-004
+
+
+
+
+                bau-mobil - das mobile Bautagebuch                                   Seite 2 von 3           06.10.2026/08:36:43 Uhr
+                   Muster Bau GmbH
+
+                   Musterstr. 1
+                   12345 Musterstadt
+                                                                           Bautagebuch
+                                                                         Montag, 24. November 2025 / 48 KW
+                  - 10 Kabelkennstreifen (weiß) bedruckt und angelegt.
+
+                  - Kabelkanal öffnen und schließen :
+
+                  - BKK (1er) innenliegend 28,00m.
+                  - BKK (1er) aufliegend 682,00m.
+                  - BKK (2er) innenliegend 115,00m.
+
+                  - Erschwertes Arbeiten durch :
+
+                  - Kabeltransport.
+                  - Wasser in den Schächten.
+                  - Keine Treppen in den Schächten.
+
+                  - Kabelanhänger in der Firma abgeholt.
+
+
+                  Dieses Bautagebuch wurde elektronisch erstellt und ist daher auch                                    geprüft und anerkannt
+                  ohne Unterschrift gültig!
+                                                                                                                                               am
+                  Digital erfasst durch Mitarbeiter, A am Montag, 24. November 2025.                  Bauleiter / Bauherr
+SH01-0001-004
+
+
+
+
+                bau-mobil - das mobile Bautagebuch                                    Seite 3 von 3                                      06.10.2026/08:36:43 Uhr

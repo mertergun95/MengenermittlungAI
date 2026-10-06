@@ -14,7 +14,7 @@ Belgeler ──► Anlama (LLM) ──► Leistungseintrag ──► LV eşleşt
 |---|---|
 | `schema.py` – ortak veri modeli (Leistungseintrag, LVPosition, Mengenzeile) | ✅ |
 | `normalisierung.py` – kısaltma sözlüğü, birim, km (`12+345`) | ✅ |
-| Belge okuma (PDF/Word/Excel) | ⏳ |
+| `bautagebuch.py` – bau-mobil Bautagebuch PDF → günlük raporlar (sayfa/blok referanslı) | ✅ |
 | `gaeb.py` – GAEB X83/X84 LV okuma, X83+X84 birleştirme, Nachtrag | ✅ |
 | LLM ile çıkarma (Ollama, yerel) | ⏳ |
 | LV eşleştirme | ⏳ |
@@ -41,6 +41,18 @@ positionen = vereinige(haupt, nt1)                                       # eşle
 ```
 
 X84 sadece OZ ve fiyat içerir. Metin, birim ve LV miktarı X83'ten gelir. Sadece X84 varsa miktar `GP / EP` ile türetilir.
+
+## Bautagebuch okuma
+
+PDF'ler metin tabanlı (Crystal Reports), OCR gerekmez. `pdftotext` gerekir (`apt install poppler-utils`).
+
+```bash
+python -m mengen.bautagebuch Riehen_BTB.pdf
+```
+
+Her `Tagesbericht`: tarih, proje no, hava, personel/saat, makineler ve `taetigkeiten` satırları.
+Her satır sayfa numarasını, son başlığı (`abschnitt`, ör. "Kabelkanal öffnen (Km 4,266 - 3,085)") ve
+boş satırlarla ayrılmış grubu (`block`, ör. bir kablo) taşır. Çok sayfalı raporlar tek güne birleştirilir.
 
 ## Kısaltma sözlüğü
 
