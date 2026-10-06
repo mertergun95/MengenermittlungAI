@@ -124,6 +124,7 @@ def werte_aus(bericht: Tagesbericht) -> Tagesauswertung:
     a = Tagesauswertung(bericht=bericht)
     kabel: Kabel | None = None
     kontext = ""  # 'kanal:<vorgang>' oder 'schacht' aus der letzten Überschrift
+    ueberschrift = ""  # letzte Zeile mit ':' am Ende, z. B. 'Kabel umverlegt:'
 
     def schliesse() -> None:
         nonlocal kabel
@@ -142,7 +143,7 @@ def werte_aus(bericht: Tagesbericht) -> Tagesauswertung:
 
         if m := KABEL_START.match(t):
             kabel = neues_kabel(z)
-            kabel.umverlegt = "umverleg" in z.abschnitt.lower()
+            kabel.umverlegt = "umverleg" in (z.abschnitt + ueberschrift).lower()
             kabel.bezeichnung = m.group(1).replace(" ", "")
             kabel.typ = _typ(m.group(2)) if m.group(2) else ""
             kontext = ""
@@ -226,6 +227,7 @@ def werte_aus(bericht: Tagesbericht) -> Tagesauswertung:
             erkannt = False
             if t.endswith(":"):
                 kontext = ""
+                ueberschrift = t
                 schliesse()
             elif kabel is not None:
                 kabel.notizen.append(t)
